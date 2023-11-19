@@ -28,6 +28,12 @@
     <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea'
+        });
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -206,7 +212,7 @@
                                             ?>
                                         </select>
                                     </div>
-                                    <input class="form-control mb-3" type="text" placeholder="Deskripsi" name="deskripsi" id="deskripsi">
+                                    <textarea class="form-control mb-5" type="text" placeholder="Deskripsi" name="deskripsi" id="mytextarea"></textarea>
                                     <input class="form-control mb-3" type="number" placeholder="Harga /malam" name="harga" id="harga">
                                     <input class="form-control mb-3" type="number" placeholder="Jumlah Kamar" name="jumlah" id="jumlah">
                                     <input class="form-control mb-3" type="number" placeholder="Ketersediaan Kamar" name="ketersediaan" id="keterdiaan">
@@ -318,6 +324,10 @@
 
             // Add event listener for the select fields
             $('form#tambah_kamar select').on('change', function() {
+                checkInputs();
+            });
+            // Add event listener for textarea fields
+            $('form#tambah_kamar textarea').on('input', function() {
                 checkInputs();
             });
         });

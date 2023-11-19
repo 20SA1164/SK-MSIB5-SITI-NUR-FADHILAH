@@ -28,6 +28,12 @@
     <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#deskripsi'
+        });
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -208,11 +214,11 @@
                                         ?>
                                     </select>
                                 </div>
-                                <input class="form-control mb-3" type="text" value="<?php echo $deskripsi ?>" name="deskripsi" id="deskripsi">
+                                <textarea class="form-control mb-3" type="text" name="deskripsi" id="deskripsi"><?php echo $deskripsi ?></textarea>
                                 <input class="form-control mb-3" type="number" value="<?php echo $harga ?>" name="harga" id="harga">
                                 <input class="form-control mb-3" type="number" value="<?php echo $ketersediaan ?>" name="ketersediaan" id="keterdiaan">
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <input type="submit" id="submitBtn" value="Submit" class="btn btn-success" disabled>
+                                    <input type="submit" id="submitBtn" value="Submit" class="btn btn-success">
                                 </div>
                             </form>
                         </div>
@@ -267,50 +273,6 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
     <script src="https://kit.fontawesome.com/6beb2a82fc.js" crossorigin="anonymous"></script>
-    <script>
-        // Function to enable or disable the submit button based on changes
-        function checkChanges() {
-            // Get the original values from the database
-            var originalKode = "<?php echo $kode; ?>";
-            var originalNamaHotel = "<?php echo $nama_hotel; ?>";
-            var originalJenisKamar = "<?php echo $jenis_kamar; ?>";
-            var originalDeskripsi = "<?php echo $deskripsi; ?>";
-            var originalHarga = "<?php echo $harga; ?>";
-            var originalKetersediaan = "<?php echo $ketersediaan; ?>";
-
-            // Get the current values from the form
-            var currentKode = document.getElementById("kode_kamar").value;
-            var currentNamaHotel = document.getElementById("nama_hotel").value;
-            var currentJenisKamar = document.getElementById("jenis_kamar").value;
-            var currentDeskripsi = document.getElementById("deskripsi").value;
-            var currentHarga = document.getElementById("harga").value;
-            var currentKetersediaan = document.getElementById("keterdiaan").value;
-
-            // Get the submit button
-            var submitBtn = document.getElementById("submitBtn");
-
-            // Check if any values have changed
-            var isChanged = (
-                currentKode !== originalKode ||
-                currentNamaHotel !== originalNamaHotel ||
-                currentJenisKamar !== originalJenisKamar ||
-                currentDeskripsi !== originalDeskripsi ||
-                currentHarga !== originalHarga ||
-                currentKetersediaan !== originalKetersediaan
-            );
-
-            // Enable or disable the submit button based on changes
-            submitBtn.disabled = !isChanged;
-        }
-
-        // Add event listeners to each input field
-        document.getElementById("kode_kamar").addEventListener("input", checkChanges);
-        document.getElementById("nama_hotel").addEventListener("change", checkChanges);
-        document.getElementById("jenis_kamar").addEventListener("change", checkChanges);
-        document.getElementById("deskripsi").addEventListener("input", checkChanges);
-        document.getElementById("harga").addEventListener("input", checkChanges);
-        document.getElementById("keterdiaan").addEventListener("input", checkChanges);
-    </script>
 
 </body>
 
