@@ -120,7 +120,7 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="data_kamar.php" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Data Kamar</p>
                                 </a>
@@ -218,7 +218,6 @@
                         </div>
                     </div>
                 </center>
-
                 </table>
             </div>
         </section>

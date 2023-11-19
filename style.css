@@ -1,3 +1,68 @@
+.body {
+  background-color: #e7e5e5 !important;
+}
+
+/* CSS untuk menengahkan item navigasi */
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: space-between;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 20px;
+}
+
+.navbar-brand:hover {
+  color: #fca311;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+/* CSS untuk membuat navigasi transparan */
+.home {
+  background-color: rgba(16, 15, 14, 0.5);
+  transition: background-color 0.3s ease-in-out; /* Efek transisi ketika mengubah warna latar belakang */
+}
+
+.navbar.scrolled {
+  background-color: #fff; /* Warna latar belakang navbar saat di-scroll */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan saat di-scroll */
+}
+
+.hotelnav {
+  background-color: rgba(16, 15, 14, 0.5);
+}
+
+.detailnav {
+  background-color: rgba(16, 15, 14, 0.5);
+}
+
+.navbar-nav .nav-link.active {
+  color: #fca311; /* Warna teks saat sedang aktif */
+}
+
+/* CSS untuk efek hover pada tautan navigasi */
+.navbar-nav .nav-link {
+  color: #fff; /* Warna teks saat normal */
+  transition: color 0.3s ease-in-out; /* Transisi warna teks */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fca311; /* Warna teks saat di-hover */
+  text-decoration: none; /* Menghilangkan garis bawah saat di-hover */
+  transform: scale(1.1); /* Efek scaling saat di-hover */
+}
+
+.detail {
+  margin-top: 80px;
+}
 
 .header {
   background-image: url("img/dashboard.jpg");
@@ -39,7 +104,7 @@
   font-weight: 400;
   position: relative; /* Menambahkan properti position untuk menetapkan posisi pada tulisan */
 }
-h1 span {
+.header h1 span {
   font-size: 4rem;
 }
 
@@ -48,3 +113,112 @@ h1 span {
   src: url("font/Poppins-Bold.ttf");
 }
 
+@font-face {
+  font-family: "grava";
+  src: url("font/Grava-Display-Bold.woff");
+}
+
+/* Custom CSS for Card Styling */
+.hotel {
+  padding: 10px;
+  margin-top: 55px;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-radius: 15px;
+  height: 240px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.card-text {
+  margin-top: 0.5rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.fa-star {
+  color: #fbc531;
+}
+
+.tulkonten {
+  font-family: "grava";
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.tulkonten2 {
+  font-family: "grava";
+  margin-top: 130px;
+  font-size: 300px;
+}
+
+.tul {
+  font-size: 70px !important;
+}
+
+.tul span {
+  color: #fca311;
+}
+
+.konten {
+  background-color: #e7e5e5;
+}
+
+.konten h1 {
+  font-size: 50px;
+}
+
+.fotokonten {
+  width: 800px;
+  margin-left: -100px;
+}
+
+.fotokonten2 {
+  width: 600px;
+  margin-bottom: 80px;
+}
+
+.hotel_detail_nama {
+  font-size: 50px;
+  font-weight: bold;
+}
+.harga {
+  font-size: 40px;
+  font-weight: bold;
+  color: red;
+  margin-top: -30px;
+}
+.ket_harga {
+  margin-top: 30px;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+.text-text {
+  margin-left: 450px;
+}

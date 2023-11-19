@@ -211,7 +211,7 @@
                     <td><?php echo $data["nama_hotel"] ?></td>
                     <td><img src="<?php echo $data["gambar"] ?>" width="100"></td>
                     <td><?php echo $data["jenis_kamar"] ?></td>
-                    <td><?php echo $data["deskripsi"] ?></td>
+                    <td><?php echo htmlspecialchars($data['deskripsi']) ?></td>
                     <td><?php echo $data["harga"] ?></td>
                     <td><?php echo $data["jumlah_kamar"] ?></td>
                     <td><?php echo $data["ketersediaan"] ?></td>
