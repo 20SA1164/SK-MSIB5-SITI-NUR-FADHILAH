@@ -210,7 +210,7 @@
               <div class="small-box bg-warning">
                 <div class="inner">
                   <h3><?php echo $ketersediaan; ?></h3>
-                  <p>Keterdiaan Kamar</p>
+                  <p>Ketersediaan Kamar</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>

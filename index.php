@@ -81,32 +81,6 @@
             </div>
         </div>
     </section>
-    <script>
-        // Fungsi untuk memuat harga kamar terendah
-        function loadLowestPrice() {
-            // Simulasi pengambilan harga terendah (Anda perlu mengganti ini dengan logika sesuai dengan sumber data Anda)
-            const lowestPrice = 100; // Ganti ini dengan harga terendah dari sumber data Anda
-
-            // Menampilkan harga terendah di dalam elemen dengan id "lowestPrice"
-            document.getElementById('lowestPrice').innerHTML = `<p>Harga kamar terendah: $${lowestPrice} per malam</p>`;
-        }
-
-        // Panggil fungsi untuk memuat harga terendah saat halaman dimuat
-        window.onload = loadLowestPrice;
-    </script>
-    <script>
-        $(document).ready(function() {
-            $(window).scroll(function() {
-                var scroll = $(window).scrollTop();
-
-                if (scroll > 50) {
-                    $(".home").addClass("scrolled");
-                } else {
-                    $(".home").removeClass("scrolled");
-                }
-            });
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 

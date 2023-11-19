@@ -2,9 +2,11 @@
 <html lang="en">
 
 <head>
+  <!-- Pengaturan karakter dan tampilan responsif -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Room Details</title>
+  <title>Detail Kamar</title>
+  <!-- Koneksi dengan Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/6beb2a82fc.js" crossorigin="anonymous"></script>
@@ -35,17 +37,17 @@
   </nav>
   <!-- End Navbar -->
 
-  <!-- Hotel Keterangan -->
+  <!-- Informasi Hotel -->
   <div class="hotel_det mt-5">
     <?php
     include 'config/koneksi.php';
-    // Check if 'id' parameter exists in the URL
+    // Periksa apakah parameter 'id' ada dalam URL
     if (isset($_GET['id'])) {
-      // Get the hotel ID from the URL parameter
+      // Ambil ID hotel dari parameter URL
       $hotel_id = $_GET['id'];
 
-      // Query the database to retrieve room details for the specific hotel
-      // This is a basic example and might need to be adjusted according to your database structure
+      // Ambil detail kamar dari database untuk hotel tertentu
+      // Contoh ini mungkin perlu disesuaikan dengan struktur database Anda
       $query = mysqli_query($conn, "SELECT * FROM kamar as k join hotel as h ON k.id_hotel = h.id_nama_hotel join jenis_kamar as jk ON k.id_jenis_kamar = jk.id_nama_jenis_kamar WHERE id_hotel = '$hotel_id'");
       $data = mysqli_fetch_array($query); ?>
       <div class="container mt-5">
@@ -100,17 +102,16 @@
     <div class="row">
       <?php
       include 'config/koneksi.php';
-      // Check if 'id' parameter exists in the URL
+      // Periksa apakah parameter 'id' ada dalam URL
       if (isset($_GET['id'])) {
-        // Get the hotel ID from the URL parameter
+        // Ambil ID hotel dari parameter URL
         $hotel_id = $_GET['id'];
 
-        // Query the database to retrieve room details for the specific hotel
-        // This is a basic example and might need to be adjusted according to your database structure
+        // Ambil detail kamar dari database untuk hotel tertentu
         $query = mysqli_query($conn, "SELECT * FROM kamar as k join hotel as h ON k.id_hotel = h.id_nama_hotel join jenis_kamar as jk ON k.id_jenis_kamar = jk.id_nama_jenis_kamar WHERE id_hotel = '$hotel_id' order by id_jenis_kamar asc");
 
         if (mysqli_num_rows($query) > 0) {
-          // Display room details for the hotel
+          // Tampilkan detail kamar untuk hotel tersebut
           while ($data = mysqli_fetch_array($query)) { ?>
             <div class="col-md-12 detail">
               <div class="card">
@@ -125,14 +126,14 @@
                           Kamar
                         </span>
                         <p class="card-text">Rp. <?php echo number_format($data['harga'], 0, ',', '.'); ?>/ Malam</p>
-                        <!-- Add more room details as needed -->
+                        <!-- Tambahkan detail kamar lebih lanjut jika diperlukan -->
                         <a href="#" class="btn btn-primary">Pesan Sekarang</a>
                       </div>
                       <div class="col-md-6">
                         <p class="card-text"><?php echo $data['deskripsi']; ?></p>
                         <?php
-                        $ketersediaan_kamar = $data['ketersediaan']; // Mengambil nilai ketersediaan kamar
-                        $warna_teks = ($ketersediaan_kamar < 3) ? 'text-danger' : 'text-success'; // Menentukan warna teks berdasarkan ketersediaan
+                        $ketersediaan_kamar = $data['ketersediaan']; // Ambil nilai ketersediaan kamar
+                        $warna_teks = ($ketersediaan_kamar < 3) ? 'text-danger' : 'text-success'; // Tentukan warna teks berdasarkan ketersediaan
                         ?>
                         <p class="card-text text-text <?php echo $warna_teks; ?>">(<?php echo $ketersediaan_kamar; ?> Kamar Tersedia)</p>
                       </div>
@@ -152,6 +153,7 @@
     </div>
   </div>
 
+  <!-- Bootstrap JS untuk fungsi toggle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
